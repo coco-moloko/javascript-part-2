@@ -37,3 +37,13 @@ function alpha (a, b){
 console.log(myArrayOfObjects.sort(alpha) );
 
 //Using array.prototype.map to find the square of an array
+
+var myArrayOfNumbers = [2, 4, 6];
+
+function roots(a) {
+     return a * a
+}
+
+console.log(myArrayOfNumbers.map(roots) );
+
+//Using an array.prototype.map to return the square of a "num" property on an object
