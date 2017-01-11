@@ -47,3 +47,52 @@ function roots(a) {
 console.log(myArrayOfNumbers.map(roots) );
 
 //Using an array.prototype.map to return the square of a "num" property on an object
+
+var myObjects = [
+    { id: 63, name: "Bob", email: "bob@email.com"},
+    { id: 34, name: "Jillfdsfs", email: "yack@email.com"},
+    { id: 17, name: "Harrygfdgfsdgf", email: "harry@email.com"}
+];
+
+function squareId(theId) {
+     return theId.id * theId.id;
+}
+console.log(myObjects.map(function(theId){
+    return squareId(theId);
+    }
+    )
+    );
+
+//Creating a function to return a function
+
+function operationMaker(operation) {
+   if (operation == "add") {
+       return function add(a, b){
+           return a + b;
+       }
+   }
+   if(operation == "sub") {
+       return function sub(a, b){
+           return a - b;
+       }
+   }
+   if(operation == "mult") {
+       return function mult(a, b){
+           return a * b;
+       }
+   }
+   if(operation == "div") {
+       return function div(a, b) {
+           return a / b;
+       }
+   }
+}
+
+var adder = operationMaker("add");
+var sum = adder(5, 10);
+console.log(sum);
+
+var mult = operationMaker("mult");
+var product = mult(5, 10);
+console.log(product);
+
